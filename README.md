@@ -5,3 +5,4 @@ Public documentation and presentation slides repository for myself. [Markdown Pr
 ### Index
 
 - [Marp Sample](./marp_sample/basic.md)
+- [ROS World 2020 Recap:ROSJP LT for LTs](./ROSWorld_2020/rosjp_40_recap_lt_for_lts.md)
