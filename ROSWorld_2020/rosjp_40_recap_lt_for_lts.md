@@ -90,3 +90,19 @@ Tomoya Fujita @ [linkedin](https://www.linkedin.com/in/tomoya-fujita-5bb656b6/) 
 # Freedom Robotics
 
 ![](./images/fleet_management.png)
+
+---
+
+# Dronecode Tips
+
+![](./images/px4_complete_stack.png)
+
+---
+
+# PX4 with DDS
+
+![](./images/px4_with_dds-rtps.png)
+
+---
+
+![bg 80%](./images/px4_with_ros2.png)
