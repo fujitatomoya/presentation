@@ -56,6 +56,10 @@ Comment Here
   - 100% Open Source / Supported
   - ARM 64 supported (2GB / 2 cores / device)
 
+<!---
+Comment Here
+--->
+
 ---
 
 # [WebAssembly Based AI as a Service on the Edge with Kubernetes](https://www.youtube.com/watch?v=LU6ru7h4r38&list=PLj6h78yzYM2OvaVMx6F1kJs0hxYOIdr8S&index=4)
@@ -65,9 +69,17 @@ Comment Here
 - lightweight container compared to linux container such as docker.
 - extreme resource constrained platform, image size is pretty small.
 
+<!---
+Comment Here
+--->
+
 ---
 
 ![bg 40%](https://wasmedge.org/book/en/use_cases/kubernetes.png)
+
+<!---
+Comment Here
+--->
 
 ---
 
@@ -79,6 +91,10 @@ Comment Here
   - [wasmtime](https://docs.wasmtime.dev/introduction.html)
   - [wasi](https://wasi.dev/)
 
+<!---
+Comment Here
+--->
+
 ---
 
 # [Accelerating Data Processing and Consumption for Building Modern Apps](https://www.youtube.com/watch?v=b4NlOS_Evo0&list=PLj6h78yzYM2OvaVMx6F1kJs0hxYOIdr8S&index=5)
@@ -86,6 +102,10 @@ Comment Here
 - Workloads are moving to the edge devices.
 - 1st half is about business background and motivation.
 - Example Workflow: Automated Package Sort.
+
+<!---
+Comment Here
+--->
 
 ---
 
@@ -96,9 +116,17 @@ Comment Here
 - eBPF kernel configuration must be enabled.
 - Cluster mesh for High Availability, Shared Services, Local/Remote Service Affinity,
 
+<!---
+Comment Here
+--->
+
 ---
 
 ![bg 100%](./images/cilium_cluster_mesh_architecture.png)
+
+<!---
+Comment Here
+--->
 
 ---
 
@@ -110,15 +138,35 @@ Comment Here
   - PARSEC, security abstraction to access the hardware root of trust. (CNCF incubation)
   - common API for security interfaces.
 
+<!---
+Comment Here
+--->
+
 ---
 
 ![bg 80%](./images/kubernetes_to_the_edge.png)
 
----
-
-# [Kubernetes at Home to Host Entertainment & Productivity Apps](https://www.youtube.com/watch?v=x5r-ixzasj8&list=PLj6h78yzYM2OvaVMx6F1kJs0hxYOIdr8S&index=10)
-
-- 
+<!---
+Comment Here
+--->
 
 ---
 
+# [Energy Efficient Placement of Edge Workloads](https://www.youtube.com/watch?v=aUYQ77JuXTM&list=PLj6h78yzYM2OvaVMx6F1kJs0hxYOIdr8S&index=12)
+
+- ICT sector consumes 1.8-3.9 % carbon emissions.
+- Kepler, Kubernetes based Efficient Power Level Exporter. (Prometheus Metrics)
+- Proving via eBPF to measure the consumption.
+- Sustainable application deployment, and fleet management based on carbon intensity.
+
+<!---
+Comment Here
+--->
+
+---
+
+![bg 80%](./images/kepler_usecase_overview.png)
+
+<!---
+Comment Here
+--->
