@@ -5,4 +5,6 @@ Public documentation and presentation slides repository for myself. [Markdown Pr
 ### Index
 
 - [Marp Sample](./marp_sample/basic.md)
-- [ROS World 2020 Recap:ROSJP LT for LTs](./ROSWorld_2020/rosjp_40_recap_lt_for_lts.md)
+- [ROS World 2020 Recap:ROSJP LT for LTs](./ROSWorld_2020/rosjp_40_recap_lt_for_lts.pdf)
+- [KubeCon NA 2022 EdgeDay](./KubeCon_NA_2022_EdgeDay/KubeConNA2022EdgeDay.pdf)
+- [ROS Iron Irwini Release Note Slide Deck](./ROS_Iron_Irwini_Release/ROS_Iron_Irwini.pdf)
