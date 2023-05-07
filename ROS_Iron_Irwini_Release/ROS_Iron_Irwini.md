@@ -7,6 +7,8 @@ footer: "[fujitatomoya@github](https://github.com/fujitatomoya)"
 
 # ROS Iron Irwini - What's new -
 
+see more details to https://docs.ros.org/en/rolling/Releases/Release-Iron-Irwini.html
+
 <!---
 Comment Here
 --->
@@ -60,6 +62,67 @@ Comment Here
 
 <!---
 Comment Here
+--->
+
+---
+
+# Improved Discovery
+
+ROS Iron deprecates `ROS_LOCALHOST_ONLY` in favor of more granular options with following options.
+- `ROS_AUTOMATIC_DISCOVERY_RANGE`
+  - controls how far ROS nodes will try to discover each other.
+  - valid options are `SUBNET`, `LOCALHOST`, `OFF`, and `SYSTEM_DEFAULT`.
+  - `SUBNET` is the default, and for DDS based middlewares it means it will discover any node reachable via multicast. `LOCALHOST` means a node will only try to discover other nodes on the same machine. `OFF` means the node won't discover any other nodes, even on the same machine.
+
+<!---
+Comment Here
+--->
+
+---
+
+# Improved Discovery
+
+- `ROS_STATIC_PEERS`
+  - is a semicolon (`;`) separated list of addresses that ROS should try to discover nodes on.
+  - allows connecting to nodes on specific machines (as long as their discovery range is not set to `OFF`).
+- Original Discussion
+  - https://discourse.ros.org/t/proposed-changes-to-how-ros-performs-discovery-of-nodes/27640
+
+<!---
+Comment Here
+--->
+
+---
+
+![bg 90%](./images/improved_discovery_localhost.png)
+
+<!---
+|Same host |||Node B setting ||||||
+|---|---|---|---|---|---|---|---|---|
+||||No static peer |||With static peer |||
+||||Off |Localhost |Subnet |Off |Localhost |Subnet|
+|Node A setting |No static peer |Off |:x: |:x: |:x: |:x: |:x: |:x:|
+|||Localhost |:x: |:white_check_mark: |:white_check_mark: |:x: |:white_check_mark: |:white_check_mark:|
+|||Subnet |:x: |:white_check_mark: |:white_check_mark: |:x: |:white_check_mark: |:white_check_mark:|
+||With static peer |Off |:x: |:x: |:x: |:x: |:x: |:x:|
+|||Localhost |:x: |:white_check_mark: |:white_check_mark: |:x: |:white_check_mark: |:white_check_mark:|
+|||Subnet |:x: |:white_check_mark: |:white_check_mark: |:x: |:white_check_mark: |:white_check_mark:|
+--->
+
+---
+
+![bg 90%](./images/improved_discovery_remote.png)
+
+<!---
+|Different hosts |||Node B setting ||||||
+||||No static peer |||With static peer |||
+||||Off |Localhost |Subnet |Off |Localhost |Subnet|
+|Node A setting |No static peer |Off |:x: |:x: |:x: |:x: |:x: |:x:|
+|||Localhost |:x: |:x: |:x: |:x: |:white_check_mark: |:white_check_mark:|
+|||Subnet |:x: |:x: |:white_check_mark: |:x: |:white_check_mark: |:white_check_mark:|
+||With static peer |Off |:x: |:x: |:x: |:x: |:x: |:x:|
+|||Localhost |:x: |:white_check_mark: |:white_check_mark: |:x: |:white_check_mark: |:white_check_mark:|
+|||Subnet |:x: |:white_check_mark: |:white_check_mark: |:x: |:white_check_mark: |:white_check_mark:|
 --->
 
 ---
@@ -129,6 +192,16 @@ Comment Here
   - If the user doesn’t specify otherwise, the default number of threads for the multi-threaded executor will be set to the number of CPUs on the machine. If the underlying OS doesn’t support getting this information, it will be set to 2.
 
 <!---
+Due to various implementation considerations, they are not derived from a common base class.
+This has led to some trouble for downstream code that wants to accept either a Node or a LifecycleNode.
+To make this a bit better, there is now a new NodeInterfaces class that can be constructed to contain the interfaces, and then be used by other code.
+--->
+
+---
+
+# Minor Enhancements
+
+<!---
 Comment Here
 --->
 
@@ -143,7 +216,7 @@ Comment Here
 - default number of threads for `MultiThreadedExecutor`. (see rclcpp)
 
 <!---
-Comment Here
+The message info structure contains various pieces of information like the sequence number of the message, the source and received timestamps, and the GID of the publisher.
 --->
 
 ---
@@ -154,7 +227,7 @@ Comment Here
 - `ros2 param dump` option `--output-dir` and `--print` has been removed.
 
 <!---
-Comment Here
+`--output-dir` and `--print` is duplication of shell functionalities. so let them deprecated.
 --->
 
 ---
@@ -181,5 +254,5 @@ Comment Here
   - The old `sqlite3` file format is still available and can be selected by the user for writing if desired.
 
 <!---
-Comment Here
+ROSCon 2022 Slides: http://download.ros.org/downloads/roscon/2022/MCAP%20A%20Next-Generation%20File%20Format%20for%20ROS%20Recording.pdf
 --->
