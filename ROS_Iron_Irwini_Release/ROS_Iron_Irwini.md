@@ -185,6 +185,33 @@ Comment Here
 
 ---
 
+# EventExecutor
+
+- New (*Experimental) Executor implementation uses `event-driven` callbacks `rclcpp` space.
+- API compatible with other `Executor` implementation.
+- see [discourse discussion](https://discourse.ros.org/t/ros2-middleware-change-proposal/15863) and [design](https://github.com/ros2/design/pull/305) for more details.
+- (Use caution as it will not be subject to the same API/ABI guarantees that the non-experimental code has.)
+
+<!---
+Comment Here
+--->
+
+---
+
+# EventExecutor
+
+- Built on top of DDS Listener API. (e.g `on_data_available`)
+- avoid modifying and update `waitset`. (performance improvement)
+- dedicated thread to manage `timer`. (high precision timer)
+- thinner software stack, abstraction layer from user space to middleware.
+- ordering event. (process events as they happened in order)
+
+<!---
+Comment Here
+--->
+
+---
+
 # rclcpp
 
 - Addition of a new paradigm for handling `Node` and `LifecycleNode` with `NodeInterfaces`
