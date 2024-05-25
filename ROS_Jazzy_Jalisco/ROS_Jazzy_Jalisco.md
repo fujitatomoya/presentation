@@ -2,7 +2,8 @@
 marp: true
 theme: default
 header: "__ROS Jazzy Jalisco Release__"
-footer: "[fujitatomoya@github](https://github.com/fujitatomoya)"
+footer: "[fujitatomoya@github](https://github.com/fujitatomoya) / [tomoyafujita@linkedin](https://www.linkedin.com/in/tomoya-fujita-5bb656b6/)"
+paginate: true
 ---
 
 ![bg right:30% fit](./images/jazzy_jalisco_logo.png)
