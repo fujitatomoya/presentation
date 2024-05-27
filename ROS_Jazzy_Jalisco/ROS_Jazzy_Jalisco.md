@@ -62,7 +62,7 @@ A new ROS MiddleWare (RMW) that integrates [Zenoh](https://zenoh.io/) with ROS 2
 
 **Note that [rmw_zenoh](https://github.com/ros2/rmw_zenoh) requires `Zenh Router` daemon running.**
 
-**To use, we need to compile ROS 2 Jazzy from source along with the [rmw_zenoh](https://github.com/ros2/rmw_zenoh)**.
+**To use, we need to compile [rmw_zenoh](https://github.com/ros2/rmw_zenoh) from the source**.
 
 <!---
 Design: https://github.com/ros2/rmw_zenoh/blob/rolling/docs/design.md
