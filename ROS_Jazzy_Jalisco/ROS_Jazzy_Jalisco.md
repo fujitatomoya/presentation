@@ -252,6 +252,20 @@ Comment Here
 
 ---
 
+- [ros2_tracing](https://github.com/ros2/ros2_tracing)
+  - [publication and subscription end to end tracing is agnostic from middleware details, no source build is required anymore](https://github.com/ros2/ros2_tracing/pull/74)
+  - [Generic publisher and subscription tracing supported](https://github.com/ros2/rclcpp/pull/2448)
+  - New `ros2 trace start/pause/resume/stop` sub-commands are supported.
+    ```shell
+    $ ros2 trace start session_name   # Configure tracing session and start tracing
+    $ ros2 trace pause session_name   # Pause tracing after starting
+    $ ros2 trace resume session_name  # Resume tracing after pausing
+    $ ros2 trace stop session_name    # Stop tracing after starting or resuming
+    ```
+    see more details for https://github.com/ros2/ros2_tracing/pull/70 and [readme](https://github.com/ros2/ros2_tracing#trace-command)
+
+---
+
 ![bg right:40% fit](./images/roscon2024.png)
 
 # See you at [ROSCon 2024](https://roscon.ros.org/2024/)
