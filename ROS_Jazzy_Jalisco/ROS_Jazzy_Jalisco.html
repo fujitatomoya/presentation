@@ -95,9 +95,10 @@ RMW_IMPLEMENTATION=rmw_zenoh_cpp ros2 run demo_nodes_cpp listener
 <li>
 <p>Recording</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">All services and all topics</span>
-ros2 bag record --all-services
-<span class="hljs-meta prompt_">
-# </span><span class="language-bash">All services</span>
+ros2 bag record --all
+<span class="hljs-meta prompt_"># </span><span class="language-bash">All topics</span>
+ros2 bag record --all-topics
+<span class="hljs-meta prompt_"># </span><span class="language-bash">All services</span>
 ros2 bag record --all-services
 </code></pre>
 </li>

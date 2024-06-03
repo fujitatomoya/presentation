@@ -133,8 +133,9 @@ graph LR
 
   ```shell
   # All services and all topics
-  ros2 bag record --all-services
-
+  ros2 bag record --all
+  # All topics
+  ros2 bag record --all-topics
   # All services
   ros2 bag record --all-services
   ```
