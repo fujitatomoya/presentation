@@ -59,14 +59,14 @@
 <h1 id="preview-rmw-zenoh"><a href="https://github.com/ros2/rmw_zenoh">Preview RMW Zenoh</a></h1>
 <p>A new ROS MiddleWare (RMW) that integrates <a href="https://zenoh.io/">Zenoh</a> with ROS 2 and <a href="https://github.com/ros2/rmw_zenoh">rmw_zenoh</a> is now available. However, it is still a preview because there are some known bugs in it, and we aren’t quite ready to commit to it for the long term.</p>
 <p><a href="https://github.com/ros2/rmw_zenoh">rmw_zenoh</a> is one of <code>Non-DDS</code> RMW implementations.</p>
-<p><strong>Note that <a href="https://github.com/ros2/rmw_zenoh">rmw_zenoh</a> requires <code>Zenh Router</code> daemon running.</strong></p>
+<p><strong>Note that <a href="https://github.com/ros2/rmw_zenoh">rmw_zenoh</a> requires <code>Zenoh Router</code> daemon running.</strong></p>
 <p><strong>To use, we need to compile <a href="https://github.com/ros2/rmw_zenoh">rmw_zenoh</a> from the source</strong>.</p>
 <footer><a href="https://github.com/fujitatomoya">fujitatomoya@github</a> / <a href="https://www.linkedin.com/in/tomoya-fujita-5bb656b6/">tomoyafujita@linkedin</a></footer>
 </section>
 </foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-header="__ROS Jazzy Jalisco Release__" data-footer="[fujitatomoya@github](https://github.com/fujitatomoya) / [tomoyafujita@linkedin](https://www.linkedin.com/in/tomoya-fujita-5bb656b6/)" data-paginate="true" data-theme="default" lang="C" data-marpit-pagination="5" style="" data-marpit-pagination-total="19" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-header="__ROS Jazzy Jalisco Release__" data-footer="[fujitatomoya@github](https://github.com/fujitatomoya) / [tomoyafujita@linkedin](https://www.linkedin.com/in/tomoya-fujita-5bb656b6/)" data-paginate="true" data-theme="default" lang="C" data-marpit-pagination="6" style="--header:__ROS Jazzy Jalisco Release__;--footer:[fujitatomoya@github](https://github.com/fujitatomoya) / [tomoyafujita@linkedin](https://www.linkedin.com/in/tomoya-fujita-5bb656b6/);--paginate:true;--theme:default;" data-marpit-pagination-total="19">
 <header><strong>ROS Jazzy Jalisco Release</strong></header>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-shell"><span class="hljs-meta prompt_">#</span><span class="language-bash"><span class="hljs-comment">## Start the zenoh router</span></span>
-ros2 run rmw_zenoh_cpp rmw_zenohd
+ros2 run rmw_zenoh_cpp rmw_zenoh
 <span class="hljs-meta prompt_">
 #</span><span class="language-bash"><span class="hljs-comment">## Talker and  Listener</span></span>
 RMW_IMPLEMENTATION=rmw_zenoh_cpp ros2 run demo_nodes_cpp talker
@@ -80,7 +80,7 @@ RMW_IMPLEMENTATION=rmw_zenoh_cpp ros2 run demo_nodes_cpp listener
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-header="__ROS Jazzy Jalisco Release__" data-footer="[fujitatomoya@github](https://github.com/fujitatomoya) / [tomoyafujita@linkedin](https://www.linkedin.com/in/tomoya-fujita-5bb656b6/)" data-paginate="true" data-theme="default" lang="C" data-marpit-pagination="7" style="--header:__ROS Jazzy Jalisco Release__;--footer:[fujitatomoya@github](https://github.com/fujitatomoya) / [tomoyafujita@linkedin](https://www.linkedin.com/in/tomoya-fujita-5bb656b6/);--paginate:true;--theme:default;" data-marpit-pagination-total="19">
 <header><strong>ROS Jazzy Jalisco Release</strong></header>
-<h1 id="rosbag2-record-and-replay-servce"><a href="https://github.com/ros2/rosbag2/blob/rolling/docs/design/rosbag2_record_replay_service.md">rosbag2 record and replay servce</a></h1>
+<h1 id="rosbag2-record-and-replay-service"><a href="https://github.com/ros2/rosbag2/blob/rolling/docs/design/rosbag2_record_replay_service.md">rosbag2 record and replay service</a></h1>
 <p>This feature depends on <a href="https://github.com/ros2/ros2/issues/1285">Service introspection</a> implemented in Iron. rosbag2 takes advantage of it to record all service requests and responses, and also replays service data from the bag file.</p>
 <p>This feature allows you to debug/enhance/test/simulate the ROS 2 services more efficiently.</p>
 <footer><a href="https://github.com/fujitatomoya">fujitatomoya@github</a> / <a href="https://www.linkedin.com/in/tomoya-fujita-5bb656b6/">tomoyafujita@linkedin</a></footer>

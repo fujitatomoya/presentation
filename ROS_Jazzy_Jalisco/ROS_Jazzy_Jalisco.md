@@ -60,7 +60,7 @@ A new ROS MiddleWare (RMW) that integrates [Zenoh](https://zenoh.io/) with ROS 2
 
 [rmw_zenoh](https://github.com/ros2/rmw_zenoh) is one of `Non-DDS` RMW implementations.
 
-**Note that [rmw_zenoh](https://github.com/ros2/rmw_zenoh) requires `Zenh Router` daemon running.**
+**Note that [rmw_zenoh](https://github.com/ros2/rmw_zenoh) requires `Zenoh Router` daemon running.**
 
 **To use, we need to compile [rmw_zenoh](https://github.com/ros2/rmw_zenoh) from the source**.
 
@@ -72,7 +72,7 @@ Design: https://github.com/ros2/rmw_zenoh/blob/rolling/docs/design.md
 
 ```shell
 ### Start the zenoh router
-ros2 run rmw_zenoh_cpp rmw_zenohd
+ros2 run rmw_zenoh_cpp rmw_zenoh
 
 ### Talker and  Listener
 RMW_IMPLEMENTATION=rmw_zenoh_cpp ros2 run demo_nodes_cpp talker
@@ -88,7 +88,7 @@ Comment Here
 
 ---
 
-# [rosbag2 record and replay servce](https://github.com/ros2/rosbag2/blob/rolling/docs/design/rosbag2_record_replay_service.md)
+# [rosbag2 record and replay service](https://github.com/ros2/rosbag2/blob/rolling/docs/design/rosbag2_record_replay_service.md)
 
 This feature depends on [Service introspection](https://github.com/ros2/ros2/issues/1285) implemented in Iron. rosbag2 takes advantage of it to record all service requests and responses, and also replays service data from the bag file.
 
