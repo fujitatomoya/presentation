@@ -169,6 +169,7 @@ Comment Here
 
 - [ros2cli](https://github.com/ros2/ros2cli/issues/856)
   - Now you can specify the log file name prefix with `--ros-args --log-file-name filename`. This is useful when you run with `ros2 run` because prefix is `python` by default.
+  - Escape sequence support for human readable log format supports with `RCUTILS_CONSOLE_OUTPUT_FORMAT`.
 
 <!---
 Comment Here
@@ -264,6 +265,12 @@ Comment Here
     $ ros2 trace stop session_name    # Stop tracing after starting or resuming
     ```
     see more details for https://github.com/ros2/ros2_tracing/pull/70 and [readme](https://github.com/ros2/ros2_tracing#trace-command)
+
+---
+
+# 2025 ROS Turtle `K` Release: Kilted Kaiju
+
+Kaiju is a Japanese term that is commonly associated with media involving giant monsters.
 
 ---
 
