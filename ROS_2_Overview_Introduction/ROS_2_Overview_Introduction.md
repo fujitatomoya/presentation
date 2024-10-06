@@ -409,6 +409,7 @@ ros2 component list
 - [Content Filtered Topics](https://docs.ros.org/en/rolling/Tutorials/Demos/Content-Filtering-Subscription.html)
 - [Network Identifier (ToS, DSCP)](https://design.ros2.org/articles/unique_network_flows.html)
 - [Micro-Controller Support (Micro-ROS)](https://micro.ros.org/)
+- [service echo / rosbag2 service support](https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html#managing-service-data)
 
 <!---
 Comment here
@@ -626,6 +627,206 @@ Comment here
 
 <!---
 Comment here
+--->
+
+---
+
+# [rosbag2 service support](https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html#managing-service-data)
+
+This feature depends on [Service introspection](https://github.com/ros2/ros2/issues/1285) implemented in Iron. rosbag2 takes advantage of it to record all service requests and responses, and also replays service data from the bag file.
+
+This feature allows you to debug/enhance/test/simulate the ROS 2 services more efficiently.
+
+<!---
+Original Issue: https://github.com/ros2/rosbag2/issues/773
+--->
+
+---
+
+![bg 90%](./images/rosbag2_service_support.png)
+
+<!--
+
+NOTE: add one more dash "->", this is to avoid html comment directive.
+
+```mermaid
+graph LR
+  A[Service Client A] <-> D((Request/Response))
+  B[Service Client B] <-> D((Request/Response))
+  C[Service Client C] <-> D((Request/Response))
+  D((Request/Response)) <-> E[Service Server]
+```
+
+```mermaid
+graph LR
+  A[Service Client A] <-> D((Request/Response))
+  B[Service Client B] <-> D((Request/Response))
+  C[Service Client C] <-> D((Request/Response))
+  D((Request/Response)) <-> E[Service Server]
+  D((Request/Response)) -- /service_events -> F{Service Introspection}
+  F{Service Introspection} -- recording -> G[rosbag2 service]
+  G[rosbag2 service] -- replaying -> D((Request/Response))
+```
+
+-->
+
+---
+
+- Recording
+
+  ```shell
+  # All services and all topics
+  ros2 bag record --all
+  # All topics
+  ros2 bag record --all-topics
+  # All services
+  ros2 bag record --all-services
+  ```
+
+- Playback
+
+  ```shell
+  ros2 bag play --publish-service-requests bag_path
+  ```
+
+Please check out [Managing Service Data Tutorial](https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html#managing-service-data) and [Design Document](https://github.com/ros2/rosbag2/blob/rolling/docs/design/rosbag2_record_replay_service.md) for more information.
+
+<!---
+Comment here
+--->
+
+---
+
+# System Packages
+
+- [rmw_zenoh](https://github.com/ros2/rmw_zenoh)
+- [Global Persistent Parameter Server](https://github.com/fujitatomoya/ros2_persist_parameter_server)
+- [rcl_logging_syslog](https://github.com/fujitatomoya/rcl_logging_syslog) with FluentBit / Fluentd
+- [ros2ai](https://github.com/fujitatomoya/ros2ai), next-gen CLI with LLMs.
+- [Service Load-Balancing (PoC)](https://github.com/barry-Xu-2018/ros2_load_balancing_service/)
+
+<!---
+Comment here
+--->
+
+---
+
+![bg right:20% fit](./images/zenoh.png)
+
+# [RMW Zenoh](https://github.com/ros2/rmw_zenoh)
+
+A new ROS MiddleWare (RMW) that integrates [Zenoh](https://zenoh.io/) with ROS 2 and [rmw_zenoh](https://github.com/ros2/rmw_zenoh) is now available. However, it is still a preview because there are some known bugs in it, and we aren’t quite ready to commit to it for the long term.
+
+[rmw_zenoh](https://github.com/ros2/rmw_zenoh) is one of `Non-DDS` RMW implementations.
+
+**Note that [rmw_zenoh](https://github.com/ros2/rmw_zenoh) requires `Zenoh Router` daemon running.**
+
+**To use, we need to compile [rmw_zenoh](https://github.com/ros2/rmw_zenoh) from the source**.
+
+<!---
+Design: https://github.com/ros2/rmw_zenoh/blob/rolling/docs/design.md
+--->
+
+---
+
+```shell
+### Start the zenoh router
+ros2 run rmw_zenoh_cpp rmw_zenoh
+
+### Talker and  Listener
+RMW_IMPLEMENTATION=rmw_zenoh_cpp ros2 run demo_nodes_cpp talker
+RMW_IMPLEMENTATION=rmw_zenoh_cpp ros2 run demo_nodes_cpp listener
+```
+
+- By default, discovery traffic is only in local host system. If network communication is needed, we need to [configure zenoh router and restart](https://github.com/ros2/rmw_zenoh?tab=readme-ov-file#connecting-multiple-hosts).
+- uses CDR as the serialization format. (Compatible with DDS based RMWs)
+
+<!---
+Comment Here
+--->
+
+---
+
+# [Global Persistent Parameter Server](https://github.com/fujitatomoya/ros2_persist_parameter_server)
+
+ROS 2 Persistent Parameter Server, that resides in the ROS 2 system to serve the parameter daemon. The other nodes(e.g the client demo provided in the code) can write/read the parameter in Parameter Server, and **Parameter Server is able to store the parameter into the persistent storage which user can specify such as tmpfs, nfs, or disk**.
+
+see more details for https://github.com/fujitatomoya/ros2_persist_parameter_server
+
+<!---
+Comment Here
+--->
+
+---
+
+![bg 85%](https://github.com/fujitatomoya/ros2_persist_parameter_server/raw/rolling/images/overview_architecture.png)
+
+<!---
+Comment Here
+--->
+
+---
+
+# [rcl_logging_syslog](https://github.com/fujitatomoya/rcl_logging_syslog) with FluentBit / Fluentd
+
+[rcl_logging_syslog](https://github.com/fujitatomoya/rcl_logging_syslog) uses [SYSLOG(3)](https://man7.org/linux/man-pages/man3/syslog.3.html) to send the log data to [rsyslog](https://www.rsyslog.com/) a.k.a **rocket-fast system for log processing** 🚀.
+
+The main objective is that **Enabling ROS 2 logging system with Cloud-Native Log Management and Observability**.
+
+see more details for https://github.com/fujitatomoya/rcl_logging_syslog
+
+<!---
+Comment Here
+--->
+
+---
+
+![bg 75%](https://github.com/fujitatomoya/rcl_logging_syslog/raw/rolling/doc/images/architecture_overview.png)
+
+<!---
+Comment Here
+--->
+
+---
+
+# [ros2ai](https://github.com/fujitatomoya/ros2ai)
+
+[ros2ai](https://github.com/fujitatomoya/ros2ai) is a <span style="color:red">next-generation</span> [ROS 2](https://github.com/ros2) command line interface extension with [OpenAI](https://openai.com/) and [Ollama](https://github.com/ollama/ollama).
+
+![bg 50%: right fit](https://github.com/fujitatomoya/ros2ai/raw/rolling/doc/images/ros2ai_overview.png)
+
+<!---
+Comment Here
+--->
+
+---
+
+See how it works 🔥
+
+<video controls="controls" width="1000" src="https://github.com/fujitatomoya/ros2ai/assets/43395114/78a0799b-40e3-4dc8-99cb-488994e94769">
+
+<!---
+Comment Here
+--->
+
+---
+
+# [Service Load-Balancing (PoC)](https://github.com/barry-Xu-2018/ros2_load_balancing_service/)
+
+- ROS 2 service load-balancing in application layer without protocol change.
+- Support multiple service servers on the same service path to have robustness and load-balancing mechanism.
+- Scale / Offload ROS 2 service server/client application with remapping but code modification.
+
+<!---
+Comment Here
+--->
+
+---
+
+![bg 80%](https://github.com/Barry-Xu-2018/ros2_load_balancing_service/blob/main/doc/img/design.png?raw=true)
+
+<!---
+Comment Here
 --->
 
 ---
