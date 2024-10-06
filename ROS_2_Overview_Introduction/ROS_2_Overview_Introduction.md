@@ -87,7 +87,6 @@ Comment here
 | Iron Irwini       | May 23rd, 2023 | November 2024    |
 | Humble Hawksbill  | May 23rd, 2022 | May 2027         |
 
-
 <!---
 Comment here
 --->
@@ -104,7 +103,7 @@ Comment here
 
 # Platform & Dependencies
 
-- C++ Standard C++17 or later
+- C++14 / C++17 Standard
 - Python version 3.6 or later
 - colcon to meta-build system
   - colcon handles ament(ROS 2) and catkin(ROS 1)
@@ -155,7 +154,7 @@ Comment here
 - [Topics](https://docs.ros.org/en/rolling/Concepts/Basic/About-Topics.html), [Services](https://docs.ros.org/en/rolling/Concepts/Basic/About-Services.html), [Parameters](https://docs.ros.org/en/rolling/Concepts/Basic/About-Parameters.html) and [Actions](https://docs.ros.org/en/rolling/Concepts/Basic/About-Actions.html)
 - [Logging](https://docs.ros.org/en/rolling/Concepts/Intermediate/About-Logging.html)
 - [Launch](https://docs.ros.org/en/rolling/Concepts/Basic/About-Launch.html)
-- [Bagging]()
+- [Bagging](https://docs.ros.org/en/rolling/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html)
 
 <!---
 Comment here
@@ -180,7 +179,7 @@ Comment here
 
 # [Node LifeCycle](https://design.ros2.org/articles/node_lifecycle.html)
 
-allow roslaunch to ensure that all components have been instantiated correctly before it allows any component to begin executing its behaviour. It will also allow nodes to be restarted or replaced on-line.
+A managed life cycle for nodes allows greater control over the state of ROS system. It allows `roslaunch` to ensure that all components have been instantiated correctly before it allows any component to begin executing its behavior. It will also allow nodes to be restarted or replaced on-line.
 
 - Primary State
   - `Unconfigure`, `Inactive`, `Active` and `Finalized`
@@ -203,7 +202,7 @@ Comment here
 
 # [Components](https://docs.ros.org/en/rolling/Concepts/Intermediate/About-Composition.html)
 
-- Just like ROS1 Nodelet
+- Just like ROS 1 Nodelet
 - Multiple nodes in a single process
 - Can load and unload the composable node
 - Composable nodes as shared libraries
@@ -262,7 +261,7 @@ Comment here
 - No parameter server
 - Parameters are hosted in Node
 - Async / Sync Parameter Client
-- get, set, list, delete and describe methods
+- `get`, `set`, `list`, `delete` and `describe` methods
 - user callback to validate parameter change
 
 <!---
@@ -341,6 +340,10 @@ Comment here
 - backend data base can be configured either [MCAP](https://mcap.dev/) (default from Iron) or [SQLite3](https://www.sqlite.org/) (default until humble)
 - Not only for topics, but services can be also recorded and playback.
 
+<!---
+Comment here
+--->
+
 ---
 
 # [Demos](https://github.com/ros2/demos) / [Examples](https://github.com/ros2/examples)
@@ -407,10 +410,13 @@ ros2 component list
 - [Network Identifier (ToS, DSCP)](https://design.ros2.org/articles/unique_network_flows.html)
 - [Micro-Controller Support (Micro-ROS)](https://micro.ros.org/)
 
+<!---
+Comment here
+--->
 
 ---
 
-# QoS (Quality of Service)
+# [Quality of Service](https://docs.ros.org/en/rolling/Concepts/Intermediate/About-Quality-of-Service-Settings.html)
 
 - QoS policies such as history, depth, reliability, durability, deadline so on.
 - QoS preset profiles, e.g) system_default, sensor_data and service.
@@ -456,7 +462,7 @@ Comment here
 
 ![bg right:30% fit](./images/Fast-DDS_shared_memory_final.png)
 
-- True Zero Copy / Write Once
+- True Zero Copy / Write Just Once
 - No encapsulation / No Serialization
 - Copy-Less communication channel using shared memory.
 - Application borrows memory from RMW Implementation.
@@ -508,7 +514,7 @@ Comment here
 
 # Sync / Async Publication
 
-in ROS aspect, we recommend async send not to block the application threads, so that application can be available for tasks in application perspective. on the other hand, async causes context switches, this could affect the latency.
+in general with ROS 2, we recommend async send not to block the application threads, so that application can be available for tasks in application perspective. on the other hand, async causes context switches, this could affect the latency.
 
 - eProsima Fast-DDS can be configured (default async)
   - see [Publication Mode](https://github.com/ros2/rmw_fastrtps/blob/master/README.md#change-publication-mode) to change this behavior.
