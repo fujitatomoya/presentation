@@ -699,11 +699,24 @@ Comment here
 
 # System Packages
 
+- [Fast-DDS Discovery Server](https://docs.ros.org/en/rolling/Tutorials/Advanced/Discovery-Server/Discovery-Server.html)
 - [rmw_zenoh](https://github.com/ros2/rmw_zenoh)
 - [Global Persistent Parameter Server](https://github.com/fujitatomoya/ros2_persist_parameter_server)
 - [rcl_logging_syslog](https://github.com/fujitatomoya/rcl_logging_syslog) with FluentBit / Fluentd
 - [ros2ai](https://github.com/fujitatomoya/ros2ai), next-gen CLI with LLMs.
 - [Service Load-Balancing (PoC)](https://github.com/barry-Xu-2018/ros2_load_balancing_service/)
+
+<!---
+Comment here
+--->
+
+---
+
+![bg right:40% fit](https://docs.ros.org/en/rolling/_images/ds_explanation.svg)
+
+# [Fast-DDS Discovery Server](https://docs.ros.org/en/rolling/Tutorials/Advanced/Discovery-Server/Discovery-Server.html)
+
+The Discovery Server provides a Client-Server Architecture that allows nodes to connect with each other using an intermediate server. Each node functions as a discovery client, sharing its info with one or more discovery servers and receiving discovery information from it. This reduces discovery-related network traffic and it does not require multicasting capabilities.
 
 <!---
 Comment here
