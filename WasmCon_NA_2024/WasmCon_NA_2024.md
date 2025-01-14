@@ -232,5 +232,3 @@ Binary device portability across ISAs (Instruction Set Architectures) and platfo
 <!---
 # Comment Here
 --->
-
----
