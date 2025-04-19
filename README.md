@@ -14,4 +14,3 @@ Public documentation and presentation slides repository for myself. [Markdown Pr
 - [ROS Jazzy Jalisco Release Note Slide Deck](https://raw.githack.com/fujitatomoya/presentation/main/ROS_Jazzy_Jalisco/ROS_Jazzy_Jalisco.html)
 - [Webinar: University of Belgrade](https://raw.githack.com/fujitatomoya/presentation/main/Webinar_UniversityOfBelgrade/Webinar_Sony_ROS_Overview.html)
 - [ROS 2 Overview Introduction](https://raw.githack.com/fujitatomoya/presentation/main/ROS_2_Overview_Introduction/ROS_2_Overview_Introduction.html)
-- [ROS Japan Developer Kaigi](https://raw.githack.com/fujitatomoya/presentation/main/ROS_Japan_Developer_Kaigi/ROS_Japan_Developer_Kaigi.html)
