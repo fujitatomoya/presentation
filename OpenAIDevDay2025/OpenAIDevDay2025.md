@@ -170,7 +170,7 @@ https://platform.openai.com/docs/guides/video-generation#generate-a-video
 
 ---
 
-## Thumnbnail / Spritesheet
+## Thumbnail / Spritesheet
 
 ```console
 # Download a thumbnail
@@ -248,7 +248,7 @@ GPT-5 pro is available in the [Responses API](https://platform.openai.com/docs/a
 
 A cost-efficient version of GPT Realtime - capable of responding to audio and text inputs in realtime over WebRTC, WebSocket, or SIP connections.
 
-For live chat, transcription, live captions, voice assitants and IoT integration.
+For live chat, transcription, live captions, voice assistants and IoT integration.
 
 <!---
 Comment here
