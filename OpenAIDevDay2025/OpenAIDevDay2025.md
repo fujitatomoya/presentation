@@ -32,8 +32,6 @@ Comment here
 
 # Apps in ChatGPT
 
-Demo with Spotify
-
 <!---
 Comment here
 --->
@@ -135,12 +133,43 @@ Comment here
 - **Job Completion**: Wait for status to transition to `completed`
 - **Download Video**: Fetch final MP4 file via `GET /videos/{video_id}/content`
 
+<!---
+Comment here
+--->
+
 ---
 
-Python demo code here:
-https://platform.openai.com/docs/guides/video-generation#generate-a-video
+```python
+
+import asyncio
+
+from openai import AsyncOpenAI
+
+client = AsyncOpenAI()
+
+
+async def main() -> None:
+    video = await client.videos.create_and_poll(
+        model="sora-2",
+        prompt="A video of a cat on a motorcycle",
+    )
+
+    if video.status == "completed":
+        print("Video successfully completed: ", video)
+    else:
+        print("Video creation failed. Status: ", video.status)
+
+
+asyncio.run(main())
+```
 
 <!---
+Python demo code here:
+https://platform.openai.com/docs/guides/video-generation#generate-a-video
+--->
+
+---
+
 ## Thumnbnail / Spritesheet
 
 ```console
@@ -155,6 +184,8 @@ curl -L "https://api.openai.com/v1/videos/video_abc123/content?variant=spriteshe
   --output spritesheet.jpg
 ```
 
+<!---
+Comment here
 --->
 
 ---
