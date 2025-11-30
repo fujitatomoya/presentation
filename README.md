@@ -15,3 +15,4 @@ Public documentation and presentation slides repository for myself. [Markdown Pr
 - [Webinar: University of Belgrade](https://raw.githack.com/fujitatomoya/presentation/main/Webinar_UniversityOfBelgrade/Webinar_Sony_ROS_Overview.html)
 - [ROS 2 Overview Introduction](https://raw.githack.com/fujitatomoya/presentation/main/ROS_2_Overview_Introduction/ROS_2_Overview_Introduction.html)
 - [OpenAI Dev Day 2025](https://raw.githack.com/fujitatomoya/presentation/main/OpenAIDevDay2025/OpenAIDevDay2025.html)
+- [ROSCon 2025 Recap](https://raw.githack.com/fujitatomoya/presentation/main/ROSCon2025_Recap/ROSCon2025_Recap.html)
