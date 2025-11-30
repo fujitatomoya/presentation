@@ -20,7 +20,7 @@ Comment here
 Organizing Committee, monthly meeting to put together for ROSCon.
 My assignment for ROSCon 2025 is,
 - Executive Committee: Decision Making, Budgets, Local Chair Communication, Presentations Time Schedule
-- Programing Committee: Review Proposals, Feedback to the authors
+- Programming Committee: Review Proposals, Feedback to the authors
 - Session Chair: ROS RMWs (5 Presentation) and Simulation (5 Presentation)
 --->
 
