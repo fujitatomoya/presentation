@@ -17,3 +17,4 @@ Public documentation and presentation slides repository for myself. [Markdown Pr
 - [OpenAI Dev Day 2025](https://raw.githack.com/fujitatomoya/presentation/main/OpenAIDevDay2025/OpenAIDevDay2025.html)
 - [ROSCon 2025 Recap](https://raw.githack.com/fujitatomoya/presentation/main/ROSCon2025_Recap/ROSCon2025_Recap.html)
 - [Open Source Development in the AI Era](https://raw.githack.com/fujitatomoya/presentation/main/OSS_and_AI/OSS_and_AI.html)
+- [ROS Community & Open Source Ecosystem](https://raw.githack.com/fujitatomoya/presentation/main/ROS_Community_and_Ecosystem/ROS_Community_and_Ecosystem.html)
