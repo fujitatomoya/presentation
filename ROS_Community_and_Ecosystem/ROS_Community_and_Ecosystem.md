@@ -208,7 +208,7 @@ Source: Open Robotics Discourse announcements and roscon.ros.org regional pages,
 | :--- | :--- | :--- | :--- |
 | 2018 | Tokyo (1st) | 2023 | Tokyo |
 | 2019 | Tokyo | 2024 | Tokyo |
-| 2021 | Online | 2025 | Nagoya (Port Messe) |
+| 2021 | Tokyo | 2025 | Nagoya (Port Messe) |
 | 2022 | Kyoto | 2026 | Tsukuba, **2 days** |
 
 <!---
@@ -305,7 +305,6 @@ Comment here
 
 # Summary
 
-- ROS has outlived three stewards because it belongs to its community; **OSRA** now gives that community formal governance and funding.
 - **ROSCon** and regional **ROSCon JP** are where the roadmap, the people and the hiring happen.
 - Japan is one of the biggest ROS user bases, with very little presence upstream. **ROS Japan UG** and **ROS Japan Developer Kaigi** are the on-ramps.
 - Participation and sponsorship are inexpensive compared with the cost of passively depending on a project you do not influence.
